@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -27,6 +27,16 @@ SAVEHIST=1000
 setopt appendhistory
 unsetopt beep
 
+#zstyle ':completion:*' completer _expand _complete _ignored 
+#zstyle :compinstall filename "$HOME/.zshrc"
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+autoload -Uz compinit
+compinit
+
+
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
@@ -38,6 +48,8 @@ alias untgz='tar zxvf'
 alias untbz='tar jxvf'
 alias untar='tar xvf'
 
-alias -g L='|less -r'
+alias -g L='|less -R'
 alias -g H='|head'
 alias -g T='|tail'
+
+alias g='ack-grep'
