@@ -1,14 +1,18 @@
+filetype off
+" enable pathgen so we can put plugins in .vim/bundle
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
+
 set nocompatible
+
+set modelines=0
+"
 " remember vim position
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
 
-" enable pathgen so we can put plugins in .vim/bundle
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-
-set modelines=0
 set background=dark
 set hidden
 set wildmenu
