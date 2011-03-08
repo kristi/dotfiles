@@ -52,4 +52,5 @@ alias -g L='|less -R'
 alias -g H='|head'
 alias -g T='|tail'
 
-alias g='ack-grep'
+alias a='ack-grep'
+alias aa='ack-grep --pager="less -R"'
