@@ -1,11 +1,20 @@
 set nocompatible
+" remember vim position
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
+
+" enable pathgen so we can put plugins in .vim/bundle
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 
 set modelines=0
 set background=dark
 set hidden
 set wildmenu
 set wildmode=list:longest
-set visualbell
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set novisualbell
 set cursorline
 set ttyfast
 set ruler
@@ -42,14 +51,19 @@ nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
 map jj <ESC>
 
-
+" Clear current serch with ,/
+nmap <silent> ,/ :nohlsearch<CR>
 
 set nobackup
 set noswapfile
-filetype indent on
+filetype plugin indent on
 set autoindent
 "set foldmethod=indent
-let python_highlight_all=1
+"let python_highlight_all=1
+if has('autocmd')
+  autocmd filetype python set expandtab
+endif
+
 "set tabstop=4
 "set shiftwidth=4
 "set expandtab
