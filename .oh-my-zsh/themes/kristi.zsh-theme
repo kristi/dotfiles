@@ -12,7 +12,7 @@ PROMPT='%{$fg_bold[$user_color]%}%n@%m$RESET:%{$fg_bold[$dir_color]%}%~%{$reset_
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='%(?..%{$fg[red]%}%? err%{$reset_color%})$(git_prompt_info)'
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[cyan]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[cyan]%}git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*"
