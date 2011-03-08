@@ -53,7 +53,8 @@ nnoremap <leader>a :Ack
 " sort css properties with ,s
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
-map jj <ESC>
+" Map jj to esc
+inoremap jj <ESC>
 
 " Clear current serch with ,/
 nmap <silent> ,/ :nohlsearch<CR>
