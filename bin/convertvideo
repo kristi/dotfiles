@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+
+from glob import glob, iglob
+from itertools import chain
+import sys
+import os
+
+cmd = 'ffmpeg -i {input} -vcodec libx264 -vpre hq -crf 24 -g 25 -acodec libmp3lame -ab 256k -ar 44100 -threads 4 {output}'
+
+if sys.argv[1] == '-t':
+    cmd = 'echo ' + cmd
+
+for file in chain(glob('*.MOV'), glob('*.mov')):
+    output = file.replace('.MOV', '.mp4')
+    os.system(cmd.format(input=file, output=output))

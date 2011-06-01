@@ -4,6 +4,12 @@ call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
+if exists("g:btm_rainbow_color") && g:btm_rainbow_color
+   call rainbow_parenthsis#LoadSquare ()
+   call rainbow_parenthsis#LoadRound ()
+   call rainbow_parenthsis#Activate ()
+endif
+
 set nocompatible
 
 set modelines=0
@@ -84,3 +90,6 @@ map <F5> :w<CR>:!%:p<CR>
 " Change colorschemes (uses scroll_color.vim plugin)
 map <silent><f9> :NEXTCOLOR<cr>
 map <silent><f10> :PREVCOLOR<cr>
+
+" Ubuntu uses white background
+set background=light
