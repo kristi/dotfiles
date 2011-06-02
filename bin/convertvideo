@@ -4,12 +4,14 @@ from glob import glob, iglob
 from itertools import chain
 import sys
 import os
+from os import path
 
 cmd = 'ffmpeg -i {input} -vcodec libx264 -vpre hq -crf 24 -g 25 -acodec libmp3lame -ab 256k -ar 44100 -threads 4 {output}'
 
-if sys.argv[1] == '-t':
+if '-t' in sys.argv: 
     cmd = 'echo ' + cmd
 
 for file in chain(glob('*.MOV'), glob('*.mov')):
-    output = file.replace('.MOV', '.mp4')
+    (base, ext) = path.splitext(file)
+    output = base + '.mp4'
     os.system(cmd.format(input=file, output=output))
