@@ -33,8 +33,8 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-autoload -Uz compinit
-compinit
+#autoload -Uz compinit
+#compinit
 
 
 alias -g ...='../..'
@@ -53,4 +53,5 @@ alias -g H='|head'
 alias -g T='|tail'
 
 alias a='ack-grep'
+alias ack='ack-grep'
 alias aa='ack-grep --pager="less -R"'
