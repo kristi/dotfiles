@@ -1,0 +1,30 @@
+bind ',' prev
+bind '.' next
+defscrollback 5000
+
+# fix scrollback in putty
+termcapinfo xterm* ti@:te@
+
+hardstatus on
+hardstatus alwayslastline
+# colored window list with system stats
+#hardstatus string "%{wk}%{kW}|%{-} {%{Yk}%D %m-%d-%y%{-} %{Wk}%C%a%{-}} {%{Gk}%H%{-} %l} %{kW}|%{-}%{wb} %-w %{Wr}[%n %t]%{-} %+w%=%{kW}|%{-}"
+# red and blue hardstatus
+#hardstatus string "%{wk}{%{Gk}%H%{-}} %{kW}|%{-}%{wb} %-w %{Wr}[%n %t]%{-} %+w%=%{kW}|%{-}"
+
+#yellow and purple
+hardstatus string '%{= kY} %{m}%H%{-} %{+b}| %=%{= ky}%?%-w%?%{M}{%{+b kY}%n%{-b M}*%{-}%t%?(%u)%?%{-}}%{-}%?%+w%?%?%=%{-} | %{-b m}%D%C%a%{-}'
+
+vbellwait 0.25
+msgwait 0.5
+
+startup_message off
+
+
+
+
+
+#start some windows
+screen bash
+screen ssh node12
+
