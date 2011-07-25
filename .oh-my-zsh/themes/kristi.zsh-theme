@@ -8,7 +8,8 @@ local dir_color='blue';
 # color strings
 local RESET="%{$reset_color%}"
 
-PROMPT='%{$fg_bold[$user_color]%}%n@%m$RESET:%{$fg_bold[$dir_color]%}%~%{$reset_color%} %# '
+PROMPT='%{$fg_bold[$user_color]%}%n@%m$RESET:%{$fg_bold[$dir_color]%}%~%{$reset_color%}
+%# '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='%(?..%{$fg[red]%}%? err%{$reset_color%})$(git_prompt_info)'
 
